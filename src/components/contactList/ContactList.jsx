@@ -1,7 +1,7 @@
 import css from './ContactList.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContacts } from 'redux/selectors';
-import { deleteContact } from 'redux/constactSlice';
+import { deleteContacts } from 'redux/operations';
 import { getFilter } from 'redux/selectors';
 
 export const ContactList = () => {
@@ -21,7 +21,7 @@ export const ContactList = () => {
               <span className={css.classList_number}>{contact.number}</span>
               <button
                 className={css.classList_button}
-                onClick={() => dispatch(deleteContact(contact.id))}
+                onClick={() => dispatch(deleteContacts(contact.id))}
                 type="button"
               >
                 Delete
