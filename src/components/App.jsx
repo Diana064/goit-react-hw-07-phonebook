@@ -3,15 +3,11 @@ import css from './App.module.css';
 import { ContactList } from './contactList/ContactList';
 import { Filter } from './filter/Filter';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectIsLoading } from 'redux/selectors';
-import { selectError } from 'redux/selectors';
 import { useEffect } from 'react';
 import { getContacts } from 'redux/selectors';
 
 export default function App() {
   const dispatch = useDispatch();
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
   const contacts = useSelector(getContacts);
 
   useEffect(() => {
